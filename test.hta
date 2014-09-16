@@ -1,4 +1,5 @@
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <script>
 
 function run()
@@ -15,9 +16,99 @@ function run()
     oShell.ShellExecute(commandtoRun, commandParms, "", "open", "1");
 	
 }
-
 </script>
 
+<script type='text/javascript' >
+
+function findLabelElementForInput(inputElem) {
+    //function created by Shawn Olson at http://www.shawnolson.net
+    if (inputElem.parentNode) {
+        if (inputElem.parentNode.tagName == 'label') {
+            return inputElem.parentNode;
+        }
+    }
+    var labels = document.getElementsByTagName("label"),i;
+    for (i = 0; i < labels.length; i++) {
+        if (labels[i].roseFor == inputElem.id) {
+            return labels[i];
+        }
+    }
+    return false;
+}
+
+function checkRequiredItems(itemsArray){
+
+    /*
+     for(var i = 0; i < itemsArray.length; i++){
+     var el = document.getElementById(itemsArray[i].id);
+     if(el.value == null || el.value == '' || el.value == itemsArray[i].emptyVal){
+     var lbl = findLabelElementForInput(el);
+     var msg = '';
+     if(lbl.innerHTML.indexOf('<') != -1){
+     msg = lbl.innerHTML.substring(0, lbl.innerHTML.indexOf('<'));
+     }
+     if (msg.indexOf('\n') != -1) {
+     msg = msg.substring(0, msg.indexOf('\n'));
+     }
+     alert(msg + ' را وارد نمایید.');
+     el.focus();
+     return false;
+     }
+     }
+     return true;
+     */
+    return validateOptions();
+}
+
+function validateOptions(){
+
+
+    var message = '\n\n';
+    var valid= true;
+    $('select').each(function() {
+        if($(this).val() == null ||$(this).val() == '' || $(this).val() == '-1') {
+            if($(this).is(':visible') == true) {
+                var label = $('label[for="' + $(this).attr('id') + '"]');
+                var msg = '';
+                if (label.html()!= null && label.html().indexOf('<') != -1) {
+                    msg = label.html().substring(0, label.html().indexOf('<')) + '\n';
+                    valid = false;
+                }
+                message += msg;
+            }
+        }
+    });
+    $('input').each(function() {
+        if( $(this).val() == null ||$(this).val().trim() == '') {
+            if($(this).is(':visible') == true) {
+                var label = $('label[for="' + $(this).attr('id') + '"]');
+                var msg = '';
+                if (label.html() != null && label.html().indexOf('<') != -1) {
+                    msg = label.html().substring(0, label.html().indexOf('<')) + '\n';
+                    valid = false;
+                }
+                message += msg;
+            }
+        }
+    });
+    $('textarea').each(function() {
+        if( $(this).val() == null ||$(this).val().trim() == '') {
+            if($(this).is(':visible') == true) {
+                var label = $('label[for="' + $(this).attr('id') + '"]');
+                var msg = '';
+                if (label.html() != null && label.html().indexOf('<') != -1) {
+                    msg = label.html().substring(0, label.html().indexOf('<')) + '\n';
+                    valid = false;
+                }
+                message += msg;
+            }
+        }
+    });
+    if(!valid){
+        alert('\u0645\u0648\u0627\u0631\u062F \u0632\u06CC\u0631 \u0627\u0644\u0632\u0627\u0645\u06CC \u0627\u0633\u062A\u060C \u0622\u0646\u0647\u0627 \u0631\u0627 \u062A\u06A9\u0645\u06CC\u0644 \u0646\u0645\u0627\u06CC\u06CC\u062F:' + message );
+    }
+    return valid;
+}
 
 
 
@@ -25,37 +116,7 @@ function run()
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type='text/javascript' src='/scripts/html.js'></script>
+</script>
 
 
 
@@ -96,15 +157,15 @@ function run()
 
 
 
-	<script type="text/javascript" src="/struts/js/base/jquery-1.5.2.min.js"></script>
-	<script type="text/javascript" src="/struts/js/base/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/struts/i18n/jquery.ui.datepicker-fa.min.js"></script>
-	<script type="text/javascript" src="/struts/js/plugins/jquery.form.min.js"></script>
-  <script type="text/javascript" src="/struts/js/plugins/jquery.subscribe.min.js"></script>
-        	<link id="jquery_theme_link" rel="stylesheet" href="/struts/themes/dark-hive/jquery-ui.css" type="text/css"/>
+	<script type="text/javascript" src="http://stu.iust.ac.ir/struts/js/base/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="http://stu.iust.ac.ir/struts/js/base/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://stu.iust.ac.ir/struts/i18n/jquery.ui.datepicker-fa.min.js"></script>
+	<script type="text/javascript" src="http://stu.iust.ac.ir/struts/js/plugins/jquery.form.min.js"></script>
+  <script type="text/javascript" src="http://stu.iust.ac.ir/struts/js/plugins/jquery.subscribe.min.js"></script>
+        	<link id="jquery_theme_link" rel="stylesheet" href="http://stu.iust.ac.ir/struts/themes/dark-hive/jquery-ui.css" type="text/css"/>
 
 
-  <script type="text/javascript" src="/struts/js/struts2/jquery.struts2-3.1.0.min.js"></script>
+  <script type="text/javascript" src="http://stu.iust.ac.ir/struts/js/struts2/jquery.struts2-3.1.0.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function () {
 	jQuery.struts2_jquery.loadAtOnce = true;
@@ -128,7 +189,7 @@ jQuery(document).ready(function () {
     
         
         <title></title>
-        <link rel="icon" href="/res?creatorLogoId=3989&dl=true"
+        <link rel="icon" href="http://stu.iust.ac.ir/res?creatorLogoId=3989&dl=true"
               type="image/jpg" sizes="16x16">
     
 
@@ -144,12 +205,12 @@ jQuery(document).ready(function () {
 
     <!-- End of Menu System Config -->
     <link rel="stylesheet" type="text/css" media="all"
-          href="/styles/farsi-fuse/theme.css">
+          href="http://stu.iust.ac.ir/styles/farsi-fuse/theme.css">
     <link rel="stylesheet" type="text/css" media="print"
-          href="/styles/farsi-fuse/print.css">
+          href="http://stu.iust.ac.ir/styles/farsi-fuse/print.css">
 
-    <script type="text/javascript" src="/scripts/global.js"></script>
-    <script type="text/javascript" src="/scripts/dateConvertor_fa.js"></script>
+    <script type="text/javascript" src="http://stu.iust.ac.ir/scripts/global.js"></script>
+    <script type="text/javascript" src="http://stu.iust.ac.ir/scripts/dateConvertor_fa.js"></script>
 
 
     <script type="text/javascript">
@@ -178,8 +239,8 @@ jQuery(document).ready(function () {
     <script language="JavaScript">
         
         var h =13;
-        var m =8;
-        var s =44;
+        var m =11;
+        var s =50;
 
         var gizmo;
 
@@ -255,7 +316,7 @@ jQuery(document).ready(function () {
 
 <meta name="heading" content="پرینت فراموشی"/>
     <meta name="menu" content="NurtureAdminMenu"/>
-    <script type='text/javascript' src='/scripts/print/jquery.jqprint-0.3.js'></script>
+    <script type='text/javascript' src='http://stu.iust.ac.ir/scripts/print/jquery.jqprint-0.3.js'></script>
      <script type="text/javascript">
 
         function print(data) {
@@ -312,7 +373,7 @@ jQuery(document).ready(function () {
     </script>
 <body >
 <div id="loading" class="loading_div">
-    <img alt="Loading ..." class="loading_icon" align="absmiddle" src="/images/ajax-loader-big.gif"/>
+    <img alt="Loading ..." class="loading_icon" align="absmiddle" src="http://stu.iust.ac.ir/images/ajax-loader-big.gif"/>
 </div>
 <div style="position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;">
 
@@ -360,19 +421,19 @@ jQuery.struts2_jquery.bind(jQuery('#viewHelpDialog'),options_viewHelpDialog);
 
                                     
 
-                                    <a id="anchor_442340449" href="javascript:void(0)">
-                                        <img src="/images/icon/help.png" alt="profile"/>
+                                    <a id="anchor_471043437" href="javascript:void(0)">
+                                        <img src="http://stu.iust.ac.ir/images/icon/help.png" alt="profile"/>
                                     </a>
 <script type='text/javascript'>
 jQuery(document).ready(function () { 
-	var options_anchor_442340449 = {};
-	options_anchor_442340449.opendialog = "viewHelpDialog";
-	options_anchor_442340449.jqueryaction = "anchor";
-	options_anchor_442340449.id = "anchor_442340449";
-	options_anchor_442340449.href = "/systemhelp/viewHelpAjax.rose";
-	options_anchor_442340449.hrefparameter = "systemHelpId=1";
+	var options_anchor_471043437 = {};
+	options_anchor_471043437.opendialog = "viewHelpDialog";
+	options_anchor_471043437.jqueryaction = "anchor";
+	options_anchor_471043437.id = "anchor_471043437";
+	options_anchor_471043437.href = "/systemhelp/viewHelpAjax.rose";
+	options_anchor_471043437.hrefparameter = "systemHelpId=1";
 
-jQuery.struts2_jquery.bind(jQuery('#anchor_442340449'),options_anchor_442340449);
+jQuery.struts2_jquery.bind(jQuery('#anchor_471043437'),options_anchor_471043437);
 
  });  
 </script>
@@ -438,36 +499,36 @@ jQuery.struts2_jquery.bind(jQuery('#viewMessageSnippetDialog'),options_viewMessa
 <th>متن پیام</th></tr></thead>
 <tbody><tr class="empty"><td colspan="4">چیزی برای نمایش پیدا نشده است</td></tr></tbody></table>
                         <hr/>
-                        <a id="anchor_595442049" onclick="moreUrl()">
+                        <a id="anchor_1050067682" onclick="moreUrl()">
                             بیشتر
                         </a>
 <script type='text/javascript'>
 jQuery(document).ready(function () { 
-	var options_anchor_595442049 = {};
-	options_anchor_595442049.jqueryaction = "anchor";
-	options_anchor_595442049.id = "anchor_595442049";
-	options_anchor_595442049.href = "#";
-	options_anchor_595442049.button = true;
-	options_anchor_595442049.bicon = "ui-icon-newwin";
+	var options_anchor_1050067682 = {};
+	options_anchor_1050067682.jqueryaction = "anchor";
+	options_anchor_1050067682.id = "anchor_1050067682";
+	options_anchor_1050067682.href = "#";
+	options_anchor_1050067682.button = true;
+	options_anchor_1050067682.bicon = "ui-icon-newwin";
 
-jQuery.struts2_jquery.bind(jQuery('#anchor_595442049'),options_anchor_595442049);
+jQuery.struts2_jquery.bind(jQuery('#anchor_1050067682'),options_anchor_1050067682);
 
  });  
 </script>
-                        <a id="anchor_1572557016">
+                        <a id="anchor_1999632186">
                             بستن
                         </a>
 <script type='text/javascript'>
 jQuery(document).ready(function () { 
-	var options_anchor_1572557016 = {};
-	options_anchor_1572557016.jqueryaction = "anchor";
-	options_anchor_1572557016.id = "anchor_1572557016";
-	options_anchor_1572557016.href = "#";
-	options_anchor_1572557016.onclick = "closeEffectDialog";
-	options_anchor_1572557016.button = true;
-	options_anchor_1572557016.bicon = "ui-icon-newwin";
+	var options_anchor_1999632186 = {};
+	options_anchor_1999632186.jqueryaction = "anchor";
+	options_anchor_1999632186.id = "anchor_1999632186";
+	options_anchor_1999632186.href = "#";
+	options_anchor_1999632186.onclick = "closeEffectDialog";
+	options_anchor_1999632186.button = true;
+	options_anchor_1999632186.bicon = "ui-icon-newwin";
 
-jQuery.struts2_jquery.bind(jQuery('#anchor_1572557016'),options_anchor_1572557016);
+jQuery.struts2_jquery.bind(jQuery('#anchor_1999632186'),options_anchor_1999632186);
 
  });  
 </script>
@@ -494,20 +555,20 @@ jQuery.struts2_jquery.bind(jQuery('#myeffectdialog'),options_myeffectdialog);
 </script>
 
                     
-                    <a id="anchor_1421134294">
+                    <a id="anchor_1970744645">
                         
-                        <img src="/images/icon/white-envelop.png" alt="profile"/>
+                        <img src="http://stu.iust.ac.ir/images/icon/white-envelop.png" alt="profile"/>
                         
                     </a>
 <script type='text/javascript'>
 jQuery(document).ready(function () { 
-	var options_anchor_1421134294 = {};
-	options_anchor_1421134294.jqueryaction = "anchor";
-	options_anchor_1421134294.id = "anchor_1421134294";
-	options_anchor_1421134294.href = "#";
-	options_anchor_1421134294.onclick = "openEffectDialog";
+	var options_anchor_1970744645 = {};
+	options_anchor_1970744645.jqueryaction = "anchor";
+	options_anchor_1970744645.id = "anchor_1970744645";
+	options_anchor_1970744645.href = "#";
+	options_anchor_1970744645.onclick = "openEffectDialog";
 
-jQuery.struts2_jquery.bind(jQuery('#anchor_1421134294'),options_anchor_1421134294);
+jQuery.struts2_jquery.bind(jQuery('#anchor_1970744645'),options_anchor_1970744645);
 
  });  
 </script>
@@ -521,9 +582,9 @@ jQuery.struts2_jquery.bind(jQuery('#anchor_1421134294'),options_anchor_142113429
 <!-- Menu -->
 
     <div height="26" class="back_menu">
-        <link href="/scripts/jquery-mega-drop-down-menu/css/skins/blue.css" type="text/css" rel="stylesheet">
-<script src="/scripts/jquery-mega-drop-down-menu/js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
-<script src="/scripts/jquery-mega-drop-down-menu/js/jquery.dcmegamenu.1.3.3.js" type="text/javascript"></script>
+        <link href="http://stu.iust.ac.ir/scripts/jquery-mega-drop-down-menu/css/skins/blue.css" type="text/css" rel="stylesheet">
+<script src="http://stu.iust.ac.ir/scripts/jquery-mega-drop-down-menu/js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
+<script src="http://stu.iust.ac.ir/scripts/jquery-mega-drop-down-menu/js/jquery.dcmegamenu.1.3.3.js" type="text/javascript"></script>
 <script type="text/javascript">
   jQuery(function () {
             jQuery('#mega-menu-1').dcMegaMenu({ 
@@ -535,12 +596,12 @@ jQuery.struts2_jquery.bind(jQuery('#anchor_1421134294'),options_anchor_142113429
  <div class="blue">
             <ul id="mega-menu-1" class="mega-menu">  <li>
 <a  class="dc-mega" href=/index.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33>صفحه اول<span class="dc-mega-icon"></span></a></li>  <li>
-<a  class="dc-mega" href=#>گزارشات سامانه ها<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">گزارشات کاربر سامانه تغذیه</a><ul>	<li><a href="/nurture/user/credit/sentCreditReport.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش اعتبار فرستاده شده</a>	</li>	<li><a href="/nurture/user/credit/recievedCreditReport.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش اعتبار دریافتی</a>	</li>	<li><a href="/nurture/user/log/report/show.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش عملکرد</a>	</li></ul>	</li></ul></li>  <li>
-<a  class="dc-mega" href=#>سامانه تغذیه<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">عملیات کاربر سامانه</a><ul>	<li><a href="/nurture/user/multi/reserve/showPanel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">رزرو غذا</a>	</li>	<li><a href="/nurture/user/reserve/dailysale/panel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">خرید روز فروش غذا</a>	</li>	<li><a href="/nurture/user/credit/charge/view.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">افزایش اعتبار</a>	</li>	<li><a href="/nurture/user/credit/inputTransferCreditInfo.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">انتقال اعتبار</a>	</li>	<li><a href="/student/forgetCard/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">فراموشی کارت</a>	</li>	<li><a href="/nurture/user/profile/changeCvv2.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تغییر رمز دوم</a>	</li>	<li><a href="/nurture/user/cardLock/edit.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">قفل نمودن کارت</a>	</li></ul>	</li></ul></li>  <li>
-<a  class="dc-mega" href=#>سامانه رفاه<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">رفاه-وام-دانشجو</a><ul>	<li><a href="/student/bank/account/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تعریف حساب های بانکی</a>	</li>	<li><a href="/admin/main/userAddressList.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">آدرس ها</a>	</li>	<li><a href="/user/loan/request/startRequest.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">درخواست تسهیلات</a>	</li>	<li><a href="/loan/check/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">ویرایش مدارک و اطلاعات تسهیلات درخواستی</a>	</li></ul>	</li></ul></li>  <li>
-<a  class="dc-mega" href=#>عملیات دانشجو<span class="dc-mega-icon"></span></a><ul>	<li><a href="/student/viewProfile.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">نمایش پروفایل</a>	</li>	<li><a href="/student/studentSuggestionShow.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">ارسال پیشنهادات/انتقادات</a>	</li>	<li><a href="/student/editCultural.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">توانمندیهای فرهنگی</a>	</li>	<li><a href="/student/fresh/editFamily.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">اطلاعات خویشاوندان</a>	</li></ul></li>  <li>
-<a  class="dc-mega" href=#>تبادل پیام<span class="dc-mega-icon"></span></a><ul>	<li><a href="/messaging/inbox.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">پیام های دریافتی</a>	</li>	<li><a href="/messaging/outbox.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">پیام های ارسالی</a>	</li>	<li><a href="/messaging/conversationalPartners.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">مکالمات</a>	</li>	<li><a href="/messaging/listLabel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">برچسب ها</a>	</li></ul></li>  <li>
-<a  class="dc-mega" href=#>تنظیمات پرونده<span class="dc-mega-icon"></span></a><ul>	<li><a href="/changePassword.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تغییر کلمه عبور</a>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>گزارشات سامانه ها<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">گزارشات کاربر سامانه تغذیه</a><ul>	<li><a href="http://stu.iust.ac.ir/nurture/user/credit/sentCreditReport.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش اعتبار فرستاده شده</a>	</li>	<li><a href="http://stu.iust.ac.ir/nurture/user/credit/recievedCreditReport.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش اعتبار دریافتی</a>	</li>	<li><a href="http://stu.iust.ac.ir/nurture/user/log/report/show.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش عملکرد</a>	</li></ul>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>سامانه تغذیه<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">عملیات کاربر سامانه</a><ul>	<li><a href="http://stu.iust.ac.ir/nurture/user/multi/reserve/showPanel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">رزرو غذا</a>	</li>	<li><a href="http://stu.iust.ac.ir/nurture/user/reserve/dailysale/panel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">خرید روز فروش غذا</a>	</li>	<li><a href="http://stu.iust.ac.ir/nurture/user/credit/charge/view.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">افزایش اعتبار</a>	</li>	<li><a href="http://stu.iust.ac.ir/nurture/user/credit/inputTransferCreditInfo.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">انتقال اعتبار</a>	</li>	<li><a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">فراموشی کارت</a>	</li>	<li><a href="http://stu.iust.ac.ir/nurture/user/profile/changeCvv2.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تغییر رمز دوم</a>	</li>	<li><a href="http://stu.iust.ac.ir/nurture/user/cardLock/edit.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">قفل نمودن کارت</a>	</li></ul>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>سامانه رفاه<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">رفاه-وام-دانشجو</a><ul>	<li><a href="http://stu.iust.ac.ir/student/bank/account/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تعریف حساب های بانکی</a>	</li>	<li><a href="http://stu.iust.ac.ir/admin/main/userAddressList.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">آدرس ها</a>	</li>	<li><a href="http://stu.iust.ac.ir/user/loan/request/startRequest.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">درخواست تسهیلات</a>	</li>	<li><a href="http://stu.iust.ac.ir/loan/check/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">ویرایش مدارک و اطلاعات تسهیلات درخواستی</a>	</li></ul>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>عملیات دانشجو<span class="dc-mega-icon"></span></a><ul>	<li><a href="http://stu.iust.ac.ir/student/viewProfile.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">نمایش پروفایل</a>	</li>	<li><a href="http://stu.iust.ac.ir/student/studentSuggestionShow.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">ارسال پیشنهادات/انتقادات</a>	</li>	<li><a href="http://stu.iust.ac.ir/student/editCultural.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">توانمندیهای فرهنگی</a>	</li>	<li><a href="http://stu.iust.ac.ir/student/fresh/editFamily.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">اطلاعات خویشاوندان</a>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>تبادل پیام<span class="dc-mega-icon"></span></a><ul>	<li><a href="http://stu.iust.ac.ir/messaging/inbox.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">پیام های دریافتی</a>	</li>	<li><a href="http://stu.iust.ac.ir/messaging/outbox.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">پیام های ارسالی</a>	</li>	<li><a href="http://stu.iust.ac.ir/messaging/conversationalPartners.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">مکالمات</a>	</li>	<li><a href="http://stu.iust.ac.ir/messaging/listLabel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">برچسب ها</a>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>تنظیمات پرونده<span class="dc-mega-icon"></span></a><ul>	<li><a href="http://stu.iust.ac.ir/changePassword.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تغییر کلمه عبور</a>	</li></ul></li>  <li>
 <a  class="dc-mega" href=/accessMgmt/action/logout.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33>خروج<span class="dc-mega-icon"></span></a></li> </ul>
 </div>
     </div>
@@ -570,7 +631,7 @@ jQuery.struts2_jquery.bind(jQuery('#anchor_1421134294'),options_anchor_142113429
 
     <div class="message" id="successMessages">    
         
-            <img src="/images/iconInformation.gif"
+            <img src="http://stu.iust.ac.ir/images/iconInformation.gif"
                 alt="اطلاعات" class="icon" />
             کارمزد دریافت فراموشی برای شما مبلغ 1750 ریال می باشد، در صورت دریافت پرینت فراموشی این مبلغ از حساب شما کسر خواهد شد<br />
         
@@ -591,7 +652,7 @@ jQuery.struts2_jquery.bind(jQuery('#anchor_1421134294'),options_anchor_142113429
                         <table width="96%">
                             <tr>
                                 <td>
-                                    <script type='text/javascript' src='/scripts/html.js'></script>
+                                    <script type='text/javascript' src='http://stu.iust.ac.ir/scripts/html.js'></script>
 
 
 
@@ -606,26 +667,26 @@ jQuery.struts2_jquery.bind(jQuery('#anchor_1421134294'),options_anchor_142113429
 </script>
 
 
-<div id="div_1379496207"
+<div id="div_1891657814"
 
 
 
 
 ></div><script type='text/javascript'>
 jQuery(document).ready(function () { 
-	var options_div_1379496207 = {};
-	options_div_1379496207.jqueryaction = "container";
-	options_div_1379496207.id = "div_1379496207";
-	options_div_1379496207.href = "#";
+	var options_div_1891657814 = {};
+	options_div_1891657814.jqueryaction = "container";
+	options_div_1891657814.id = "div_1891657814";
+	options_div_1891657814.href = "#";
   
 
-jQuery.struts2_jquery.bind(jQuery('#div_1379496207'),options_div_1379496207);
+jQuery.struts2_jquery.bind(jQuery('#div_1891657814'),options_div_1891657814);
 
  });  
 </script>
 
 <div align="center">
-    <img id="indicator" align="center" src="/images/ajax-loader.gif" alt="..." style="display: none;" />
+    <img id="indicator" align="center" src="http://stu.iust.ac.ir/images/ajax-loader.gif" alt="..." style="display: none;" />
 </div>
 
 <table width="100%">
@@ -638,29 +699,29 @@ jQuery.struts2_jquery.bind(jQuery('#div_1379496207'),options_div_1379496207);
 <thead>
 <tr>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=0&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام کاربری</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=0&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام کاربری</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=1&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=1&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=2&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام خانوادگی</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=2&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام خانوادگی</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=3&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">گروه</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=3&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">گروه</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=4&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">سلف</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=4&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">سلف</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=5&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">وعده</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=5&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">وعده</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=6&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نوع غذا</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=6&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نوع غذا</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=7&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام غذا</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=7&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام غذا</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=8&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">روز فروش؟</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=8&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">روز فروش؟</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=9&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">تعداد رزرو شده</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=9&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">تعداد رزرو شده</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=10&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">تعداد باقی مانده</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=10&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">تعداد باقی مانده</a></th>
 <th class="sortable">
-<a href="/student/forgetCard/list.rose?d-1341518-s=11&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">خورده شده</a></th>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?d-1341518-s=11&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">خورده شده</a></th>
 <th>چاپ</th></tr></thead>
 <tbody>
 <tr class="odd">
@@ -690,7 +751,7 @@ jQuery.struts2_jquery.bind(jQuery('#div_1379496207'),options_div_1379496207);
                     </td>
 <td>
                         
-                        <a id="print-1" href="#" onclick="run()" >چاپ</a>
+                        <a id="print-1" href="#">چاپ</a>
                             <script type="text/javascript">
                                 jQuery("#print-1").click(function () {
                                     jQuery("#indicator").show();
@@ -724,8 +785,8 @@ jQuery.struts2_jquery.bind(jQuery('#div_1379496207'),options_div_1379496207);
                             </script>
                         
                     </td></tr></tbody></table><div class="exportlinks">
-<a href="/student/forgetCard/list.rose?sessionid=782859DA4345CCEF60C4EE7E6F3E1C33&amp;d-1341518-e=2&amp;6578706f7274=1">فايل excell را دريافت کنيد</a>|
-<a href="/student/forgetCard/list.rose?sessionid=782859DA4345CCEF60C4EE7E6F3E1C33&amp;d-1341518-e=5&amp;6578706f7274=1">فايل pdf را دريافت کنيد</a></div>
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?sessionid=782859DA4345CCEF60C4EE7E6F3E1C33&amp;d-1341518-e=2&amp;6578706f7274=1">فايل excell را دريافت کنيد</a>|
+<a href="http://stu.iust.ac.ir/student/forgetCard/list.rose?sessionid=782859DA4345CCEF60C4EE7E6F3E1C33&amp;d-1341518-e=5&amp;6578706f7274=1">فايل pdf را دريافت کنيد</a></div>
             </fieldset>
         </td>
     </tr>
@@ -772,7 +833,7 @@ jQuery.struts2_jquery.bind(jQuery('#div_1379496207'),options_div_1379496207);
                        href="">
                         <img style="padding:0px 10px 2px 2px; margin:0 4px ; line-height:26px; float:right;"
                              class="ui-icon-home"
-                             src='/res?creatorLogoId=3987&dl=true' alt='/res?creatorLogoId=dab24.png&dl=true'
+                             src='http://stu.iust.ac.ir/res?creatorLogoId=3987&dl=true' alt='/res?creatorLogoId=dab24.png&dl=true'
                              height='30'
                              width='30'/>
                         داده کاوان اندیشه برتر
@@ -812,7 +873,7 @@ jQuery.struts2_jquery.bind(jQuery('#div_1379496207'),options_div_1379496207);
                        href="">
                         <img style="padding:0px 10px 2px 2px; margin:0 4px ; line-height:26px; float:left;"
                              class="ui-icon-home"
-                             src='/res?organLogoId=3988&dl=true' alt='/res?organLogoId=logo.jpg&dl=true'
+                             src='http://stu.iust.ac.ir/res?organLogoId=3988&dl=true' alt='/res?organLogoId=logo.jpg&dl=true'
                              height='30'
                              width='30'/>
                         دانشگاه علم و صنعت ایران
