@@ -18,3 +18,861 @@ function run()
 }
 
 </script>
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript' src='/scripts/html.js'></script>
+
+
+
+    
+    
+    
+
+<script type="text/javascript">
+    function addUniqueParam(jForm) {
+        jForm.action = jForm.action + "?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33";
+    }
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <!--[if gte IE 9]>
+    <style type="text/css">
+        .gradient {
+            filter: none;
+        }
+    </style>
+    <![endif]-->
+
+            <!-- HTTP 1.1 -->
+        <meta http-equiv="Cache-Control" content="no-store"/>
+        <!-- HTTP 1.0 -->
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <!-- Prevents caching at the Proxy Server -->
+        <meta http-equiv="Expires" content="-1"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <!--<meta name="generator" content="Dadekavan Ltd" />--> <!-- leave this for stats please -->
+        <link rel="icon" href='/images/favicon.ico'/>
+
+    <title>سماد- سامانه مدیریت امور دانشجویی&nbsp;<>&nbsp;پرینت فراموشی</title>
+
+    
+
+
+
+
+	<script type="text/javascript" src="/struts/js/base/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="/struts/js/base/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/struts/i18n/jquery.ui.datepicker-fa.min.js"></script>
+	<script type="text/javascript" src="/struts/js/plugins/jquery.form.min.js"></script>
+  <script type="text/javascript" src="/struts/js/plugins/jquery.subscribe.min.js"></script>
+        	<link id="jquery_theme_link" rel="stylesheet" href="/struts/themes/dark-hive/jquery-ui.css" type="text/css"/>
+
+
+  <script type="text/javascript" src="/struts/js/struts2/jquery.struts2-3.1.0.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function () {
+	jQuery.struts2_jquery.loadAtOnce = true;
+  	jQuery.scriptPath = "/struts/";
+  jQuery.struts2_jquery.local = "fa";
+  jQuery.struts2_jquery.gridLocal = "fa";
+  jQuery.struts2_jquery.timeLocal = "en";
+	jQuery.ajaxSettings.traditional = true;
+
+	jQuery.ajaxSetup ({
+		cache: false
+	});
+});
+</script>
+
+
+    <!-- Menu System -->
+
+    
+    
+    
+        
+        <title></title>
+        <link rel="icon" href="/res?creatorLogoId=3989&dl=true"
+              type="image/jpg" sizes="16x16">
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- End of Menu System Config -->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/styles/farsi-fuse/theme.css">
+    <link rel="stylesheet" type="text/css" media="print"
+          href="/styles/farsi-fuse/print.css">
+
+    <script type="text/javascript" src="/scripts/global.js"></script>
+    <script type="text/javascript" src="/scripts/dateConvertor_fa.js"></script>
+
+
+    <script type="text/javascript">
+        function noErrorCustom() {
+            return true;
+        }
+        if (getInternetExplorerVersion() > -1)
+            window.onerror = noErrorCustom;
+    </script>
+    <script type="text/javascript">
+        function noErrorCustom() {
+            return true;
+        }
+        if (getInternetExplorerVersion() > -1)
+            window.onerror = noErrorCustom;
+    </script>
+
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <!-- Prevents caching at the Proxy Server -->
+    <meta http-equiv="Expires" content="-1"/>
+
+
+    <script language="JavaScript">
+        
+        var h =13;
+        var m =8;
+        var s =44;
+
+        var gizmo;
+
+        function stopClock() {
+            clearTimeout(gizmo);
+        }
+
+        function yourClock() {
+            var time = " ";
+            s = parseInt(s) + 1;
+            if (s == 60) {
+                s = 0;
+                m = parseInt(m) + 1;
+                if (m == 60) {
+                    m = 0;
+                    h = parseInt(h) + 1;
+                    if (h == 24) {
+                        h = 0;
+                    }
+                }
+            }
+            time += h + ":" + m + ":" + s;
+            document.getElementById("the_time").innerHTML = time;
+            gizmo = setTimeout("yourClock()", 1000);
+        }
+
+    </script>
+    <script type="text/javascript">
+        function click_loading() {
+            document.getElementById("loading").style.display = "block";
+        }
+
+
+    </script>
+
+    <style type="text/css">
+        .tooltip {
+            display:none;
+            position:absolute;
+            border:1px solid #333;
+            background-color:#161616;
+            border-radius:5px;
+            padding:10px;
+            color:#fff;
+            font-size:12px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            // Tooltip only Text
+            jQuery('.masterTooltip').hover(function(){
+                // Hover over code
+                var title = jQuery(this).attr('title');
+                jQuery(this).data('tipText', title).removeAttr('title');
+                jQuery('<p class="tooltip"></p>')
+                        .text(title)
+                        .appendTo('body')
+                        .fadeIn('slow');
+            }, function() {
+                // Hover out code
+                jQuery(this).attr('title', jQuery(this).data('tipText'));
+                jQuery('.tooltip').remove();
+            }).mousemove(function(e) {
+                        var mousex = e.pageX + 20; //Get X coordinates
+                        var mousey = e.pageY + 10; //Get Y coordinates
+                        jQuery('.tooltip')
+                                .css({ top: mousey, left: mousex })
+                    });
+        });
+    </script>
+</head>
+
+<meta name="heading" content="پرینت فراموشی"/>
+    <meta name="menu" content="NurtureAdminMenu"/>
+    <script type='text/javascript' src='/scripts/print/jquery.jqprint-0.3.js'></script>
+     <script type="text/javascript">
+
+        function print(data) {
+//            {"result":{"count":10,"deliverDate":"date","foodName":"foodname","foodType":"foodtype","meal":"meal","remainCount":12,"self":"self","username":"user"}}
+            jQuery('#result').html("<ul id='printResult' style='list-style: none;margin:0 !important; padding:0 !important;'>");
+            var list = jQuery('#printResult');
+
+        
+        
+        
+        
+        
+        
+        
+        
+            if (data.result.valid) {
+                jQuery.each(data, function (index, value) {
+                    list.append('<li><span style="float:left;">' + data.result.deliverDate + '</span><span style="float:right;">' + data.result.deliverTime + '</span><br style="clear:both;" /></li>\n');
+                    list.append('<li><span style="text-align:center;display:block;font-weight:bold;">' + data.result.username + '</span></li>\n');
+                    list.append('<li>' + data.result.self + '</li>\n');
+                    list.append('<li>' + data.result.meal + ' - ' + data.result.foodType + '</li>\n');
+                    list.append('<li> تعداد : ' + data.result.count + '</li>\n');
+                    list.append('<li><span style="text-align:center;display:block;font-weight:bold;">' + data.result.foodName + '</span></li>\n');
+                });
+                try {
+                    jsPrintSetup.setOption('orientation', jsPrintSetup.kPortraitOrientation);
+                    // set top margins in millimeters
+                    jsPrintSetup.setOption('marginTop', 0);
+                    jsPrintSetup.setOption('marginBottom', 0);
+                    jsPrintSetup.setOption('marginLeft', 0);
+                    jsPrintSetup.setOption('marginRight', 0);
+                    // set page header
+                    jsPrintSetup.setOption('headerStrLeft', 'My custom header');
+                    jsPrintSetup.setOption('headerStrCenter', '');
+                    jsPrintSetup.setOption('headerStrRight', '&PT');
+                    // set empty page footer
+                    jsPrintSetup.setOption('footerStrLeft', '');
+                    jsPrintSetup.setOption('footerStrCenter', '');
+                    jsPrintSetup.setOption('footerStrRight', '');
+//            jsPrintSetup.clearSilentPrint();
+                    jsPrintSetup.setSilentPrint(true);
+
+//                user_pref("print.always_print_silent",true);
+//                user_pref("print.show_print_progress",false);
+                    jQuery('#result').jqprint();
+                } catch (err) {
+                    alert("خطایی در هنگام پرینت رخ داد");
+                }
+            } else {
+                alert(data.result.htmlMessage);
+            }
+            jQuery('#result').html("");
+        }
+    </script>
+<body >
+<div id="loading" class="loading_div">
+    <img alt="Loading ..." class="loading_icon" align="absmiddle" src="/images/ajax-loader-big.gif"/>
+</div>
+<div style="position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;">
+
+<!-- Header Pic -->
+
+    <table cellpadding="0" cellspacing="0" class="header" align="center" width="100%">
+        <tr height="77" class="header_middel">
+            <td width="48" height="77" class="header_tight"></td>
+            <td height="77">
+                <table>
+                    <tr>
+                        <td valign="middle">
+                            <div style="padding-right:15px; margin-top:-18px; font-weight:bold;">
+                                پرینت فراموشی
+
+                            </div>
+                        </td>
+                        <td valign="top">
+                            
+                                <div style="padding-right:15px; margin-top:-18px; font-weight:bold;"
+                                     class="masterTooltip" title="راهنمای کاربر سیستم تغذیه">
+                                    <div id="viewHelpDialog"
+>
+</div>
+<script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_viewHelpDialog = {};
+	options_viewHelpDialog.height = 500;
+	options_viewHelpDialog.width = 900;
+	options_viewHelpDialog.show = "slide";
+	options_viewHelpDialog.hide = "slide";
+	options_viewHelpDialog.buttons = viewHelpButtons();
+	options_viewHelpDialog.autoOpen = false;
+	options_viewHelpDialog.modal = true;
+	options_viewHelpDialog.opentopics = "openRemoteDialog1s";
+	options_viewHelpDialog.jqueryaction = "dialog";
+	options_viewHelpDialog.id = "viewHelpDialog";
+	options_viewHelpDialog.href = "#";
+
+jQuery.struts2_jquery.bind(jQuery('#viewHelpDialog'),options_viewHelpDialog);
+
+ });  
+</script>
+
+
+                                    
+
+                                    <a id="anchor_442340449" href="javascript:void(0)">
+                                        <img src="/images/icon/help.png" alt="profile"/>
+                                    </a>
+<script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_anchor_442340449 = {};
+	options_anchor_442340449.opendialog = "viewHelpDialog";
+	options_anchor_442340449.jqueryaction = "anchor";
+	options_anchor_442340449.id = "anchor_442340449";
+	options_anchor_442340449.href = "/systemhelp/viewHelpAjax.rose";
+	options_anchor_442340449.hrefparameter = "systemHelpId=1";
+
+jQuery.struts2_jquery.bind(jQuery('#anchor_442340449'),options_anchor_442340449);
+
+ });  
+</script>
+                                </div>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <td width="400" height="77">
+                <div style="padding-left:30px; margin-top:-18px; font-weight:bold;">
+                    محمد&nbsp;دولتشاه&nbsp;&nbsp;90521148&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <span id="the_time"></span>
+                    1393/06/25
+                </div>
+            </td>
+            
+            
+            <td width="80" height="77" class="header_left">
+                <div id="noti_Container" style="margin-top:-18px;">
+                    
+                    
+
+                    <input type="hidden" name="userMessageId" value="" id="userMessageId"/>
+
+                    <div id="viewMessageSnippetDialog"
+>
+</div>
+<script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_viewMessageSnippetDialog = {};
+	options_viewMessageSnippetDialog.height = 500;
+	options_viewMessageSnippetDialog.width = 900;
+	options_viewMessageSnippetDialog.show = "slide";
+	options_viewMessageSnippetDialog.hide = "slide";
+	options_viewMessageSnippetDialog.buttons = viewSnippetButtons();
+	options_viewMessageSnippetDialog.autoOpen = false;
+	options_viewMessageSnippetDialog.modal = true;
+	options_viewMessageSnippetDialog.opentopics = "openRemoteDialog";
+	options_viewMessageSnippetDialog.jqueryaction = "dialog";
+	options_viewMessageSnippetDialog.id = "viewMessageSnippetDialog";
+	options_viewMessageSnippetDialog.href = "#";
+
+jQuery.struts2_jquery.bind(jQuery('#viewMessageSnippetDialog'),options_viewMessageSnippetDialog);
+
+ });  
+</script>
+
+
+                    <div id="myeffectdialog"
+>
+
+
+                        
+<table class="displayTable" id="row">
+<thead>
+<tr>
+<th>تاریخ</th>
+<th>فرستنده</th>
+<th>موضوع</th>
+<th>متن پیام</th></tr></thead>
+<tbody><tr class="empty"><td colspan="4">چیزی برای نمایش پیدا نشده است</td></tr></tbody></table>
+                        <hr/>
+                        <a id="anchor_595442049" onclick="moreUrl()">
+                            بیشتر
+                        </a>
+<script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_anchor_595442049 = {};
+	options_anchor_595442049.jqueryaction = "anchor";
+	options_anchor_595442049.id = "anchor_595442049";
+	options_anchor_595442049.href = "#";
+	options_anchor_595442049.button = true;
+	options_anchor_595442049.bicon = "ui-icon-newwin";
+
+jQuery.struts2_jquery.bind(jQuery('#anchor_595442049'),options_anchor_595442049);
+
+ });  
+</script>
+                        <a id="anchor_1572557016">
+                            بستن
+                        </a>
+<script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_anchor_1572557016 = {};
+	options_anchor_1572557016.jqueryaction = "anchor";
+	options_anchor_1572557016.id = "anchor_1572557016";
+	options_anchor_1572557016.href = "#";
+	options_anchor_1572557016.onclick = "closeEffectDialog";
+	options_anchor_1572557016.button = true;
+	options_anchor_1572557016.bicon = "ui-icon-newwin";
+
+jQuery.struts2_jquery.bind(jQuery('#anchor_1572557016'),options_anchor_1572557016);
+
+ });  
+</script>
+                    </div>
+<script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_myeffectdialog = {};
+	options_myeffectdialog.height = 500;
+	options_myeffectdialog.width = 800;
+	options_myeffectdialog.show = "slideDown";
+	options_myeffectdialog.hide = "slideUp";
+	options_myeffectdialog.position = "relative";
+	options_myeffectdialog.autoOpen = false;
+	options_myeffectdialog.modal = true;
+	options_myeffectdialog.opentopics = "openEffectDialog";
+	options_myeffectdialog.closetopics = "closeEffectDialog";
+	options_myeffectdialog.jqueryaction = "dialog";
+	options_myeffectdialog.id = "myeffectdialog";
+	options_myeffectdialog.href = "#";
+
+jQuery.struts2_jquery.bind(jQuery('#myeffectdialog'),options_myeffectdialog);
+
+ });  
+</script>
+
+                    
+                    <a id="anchor_1421134294">
+                        
+                        <img src="/images/icon/white-envelop.png" alt="profile"/>
+                        
+                    </a>
+<script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_anchor_1421134294 = {};
+	options_anchor_1421134294.jqueryaction = "anchor";
+	options_anchor_1421134294.id = "anchor_1421134294";
+	options_anchor_1421134294.href = "#";
+	options_anchor_1421134294.onclick = "openEffectDialog";
+
+jQuery.struts2_jquery.bind(jQuery('#anchor_1421134294'),options_anchor_1421134294);
+
+ });  
+</script>
+                </div>
+                    
+        </tr>
+    </table>
+
+
+
+<!-- Menu -->
+
+    <div height="26" class="back_menu">
+        <link href="/scripts/jquery-mega-drop-down-menu/css/skins/blue.css" type="text/css" rel="stylesheet">
+<script src="/scripts/jquery-mega-drop-down-menu/js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
+<script src="/scripts/jquery-mega-drop-down-menu/js/jquery.dcmegamenu.1.3.3.js" type="text/javascript"></script>
+<script type="text/javascript">
+  jQuery(function () {
+            jQuery('#mega-menu-1').dcMegaMenu({ 
+        rowItems:'5',
+        speed:'slow',
+        effect:'slide'
+		 });
+        });    </script>
+ <div class="blue">
+            <ul id="mega-menu-1" class="mega-menu">  <li>
+<a  class="dc-mega" href=/index.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33>صفحه اول<span class="dc-mega-icon"></span></a></li>  <li>
+<a  class="dc-mega" href=#>گزارشات سامانه ها<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">گزارشات کاربر سامانه تغذیه</a><ul>	<li><a href="/nurture/user/credit/sentCreditReport.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش اعتبار فرستاده شده</a>	</li>	<li><a href="/nurture/user/credit/recievedCreditReport.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش اعتبار دریافتی</a>	</li>	<li><a href="/nurture/user/log/report/show.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">گزارش عملکرد</a>	</li></ul>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>سامانه تغذیه<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">عملیات کاربر سامانه</a><ul>	<li><a href="/nurture/user/multi/reserve/showPanel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">رزرو غذا</a>	</li>	<li><a href="/nurture/user/reserve/dailysale/panel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">خرید روز فروش غذا</a>	</li>	<li><a href="/nurture/user/credit/charge/view.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">افزایش اعتبار</a>	</li>	<li><a href="/nurture/user/credit/inputTransferCreditInfo.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">انتقال اعتبار</a>	</li>	<li><a href="/student/forgetCard/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">فراموشی کارت</a>	</li>	<li><a href="/nurture/user/profile/changeCvv2.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تغییر رمز دوم</a>	</li>	<li><a href="/nurture/user/cardLock/edit.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">قفل نمودن کارت</a>	</li></ul>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>سامانه رفاه<span class="dc-mega-icon"></span></a><ul>	<li><a href="#">رفاه-وام-دانشجو</a><ul>	<li><a href="/student/bank/account/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تعریف حساب های بانکی</a>	</li>	<li><a href="/admin/main/userAddressList.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">آدرس ها</a>	</li>	<li><a href="/user/loan/request/startRequest.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">درخواست تسهیلات</a>	</li>	<li><a href="/loan/check/list.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">ویرایش مدارک و اطلاعات تسهیلات درخواستی</a>	</li></ul>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>عملیات دانشجو<span class="dc-mega-icon"></span></a><ul>	<li><a href="/student/viewProfile.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">نمایش پروفایل</a>	</li>	<li><a href="/student/studentSuggestionShow.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">ارسال پیشنهادات/انتقادات</a>	</li>	<li><a href="/student/editCultural.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">توانمندیهای فرهنگی</a>	</li>	<li><a href="/student/fresh/editFamily.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">اطلاعات خویشاوندان</a>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>تبادل پیام<span class="dc-mega-icon"></span></a><ul>	<li><a href="/messaging/inbox.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">پیام های دریافتی</a>	</li>	<li><a href="/messaging/outbox.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">پیام های ارسالی</a>	</li>	<li><a href="/messaging/conversationalPartners.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">مکالمات</a>	</li>	<li><a href="/messaging/listLabel.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">برچسب ها</a>	</li></ul></li>  <li>
+<a  class="dc-mega" href=#>تنظیمات پرونده<span class="dc-mega-icon"></span></a><ul>	<li><a href="/changePassword.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33">تغییر کلمه عبور</a>	</li></ul></li>  <li>
+<a  class="dc-mega" href=/accessMgmt/action/logout.rose?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33>خروج<span class="dc-mega-icon"></span></a></li> </ul>
+</div>
+    </div>
+
+
+<div class="border_right">
+    <div class="border_left">
+
+
+        <div style="height:20px"></div>
+        <div align="center" class="main_body">
+            <table width="100%">
+                <tbody>
+                 
+                <tr>
+                    <td class="content">
+                        <div align="center" style="width: 600px;">
+
+
+
+
+
+
+
+
+
+
+    <div class="message" id="successMessages">    
+        
+            <img src="/images/iconInformation.gif"
+                alt="اطلاعات" class="icon" />
+            کارمزد دریافت فراموشی برای شما مبلغ 1750 ریال می باشد، در صورت دریافت پرینت فراموشی این مبلغ از حساب شما کسر خواهد شد<br />
+        
+    </div>
+    
+
+
+
+
+
+</div>
+
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center">
+                        <table width="96%">
+                            <tr>
+                                <td>
+                                    <script type='text/javascript' src='/scripts/html.js'></script>
+
+
+
+    
+    
+    
+
+<script type="text/javascript">
+    function addUniqueParam(jForm) {
+        jForm.action = jForm.action + "?sessionId=782859DA4345CCEF60C4EE7E6F3E1C33";
+    }
+</script>
+
+
+<div id="div_1379496207"
+
+
+
+
+></div><script type='text/javascript'>
+jQuery(document).ready(function () { 
+	var options_div_1379496207 = {};
+	options_div_1379496207.jqueryaction = "container";
+	options_div_1379496207.id = "div_1379496207";
+	options_div_1379496207.href = "#";
+  
+
+jQuery.struts2_jquery.bind(jQuery('#div_1379496207'),options_div_1379496207);
+
+ });  
+</script>
+
+<div align="center">
+    <img id="indicator" align="center" src="/images/ajax-loader.gif" alt="..." style="display: none;" />
+</div>
+
+<table width="100%">
+    <tr>
+        <td width="100%">
+            <fieldset>
+                
+                
+<table class="displayTable" id="reserve">
+<thead>
+<tr>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=0&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام کاربری</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=1&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=2&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام خانوادگی</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=3&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">گروه</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=4&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">سلف</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=5&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">وعده</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=6&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نوع غذا</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=7&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">نام غذا</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=8&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">روز فروش؟</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=9&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">تعداد رزرو شده</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=10&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">تعداد باقی مانده</a></th>
+<th class="sortable">
+<a href="/student/forgetCard/list.rose?d-1341518-s=11&amp;d-1341518-o=2&amp;sessionid=782859DA4345CCEF60C4EE7E6F3E1C33">خورده شده</a></th>
+<th>چاپ</th></tr></thead>
+<tbody>
+<tr class="odd">
+<td>90521148</td>
+<td>محمد</td>
+<td>دولتشاه</td>
+<td>دانشجو غیرخوابگاهی</td>
+<td>سلف مرکزی برادران</td>
+<td>ناهار</td>
+<td>غذای نوع 3</td>
+<td>جوجه کباب</td>
+<td>
+                        <input type="checkbox"   disabled="true"/>
+                    </td>
+<td>1</td>
+<td>
+                        
+                            <select name="remainCount-1" size="1"  id="remainCount-1" value="1" style="width:50px">
+<option value="1" selected>1</option>
+</select>
+
+                        
+                        
+                    </td>
+<td>
+                        <input type="checkbox"   disabled="true"/>
+                    </td>
+<td>
+                        
+                        <a id="print-1" href="#">چاپ</a>
+                            <script type="text/javascript">
+                                jQuery("#print-1").click(function () {
+                                    jQuery("#indicator").show();
+                                    href = jQuery("#print-1").attr('href');
+                                    combo = jQuery("#remainCount-1").val;
+                                    e = document.getElementById('remainCount-1').options[document.getElementById('remainCount-1').selectedIndex].value.toString();
+                                    href = "/student/forgetCard/print.rose?id=2553938&count=" + e + "";
+                                    jQuery("#print-1").attr('href', href);
+                                    jQuery.ajax({
+                                        url:href,
+                                        type:'post',
+                                        cache:false,
+                                        contentType:'application/json; charset=utf-8',
+                                        dataType:'json',
+                                        success:function (json) {
+                                            jQuery("#indicator").hide();
+                                            jQuery("#print-1").hide();
+                                            print(json);
+//                                        alert(json.result.count);
+//                                         console.log(" reponse :"+ json);
+                                        },
+                                        error:function (XMLHttpRequest, textStatus, errorThrown) {
+                                            jQuery("#print-1").show();
+                                            jQuery("#indicator").hide();
+                                            alert("خطایی در هنگام پرینت رخ داد");
+//                                            console.log("error :" + XMLHttpRequest.responseText);
+                                        }
+                                    });
+                                    return false;
+                                });
+                            </script>
+                        
+                    </td></tr></tbody></table><div class="exportlinks">
+<a href="/student/forgetCard/list.rose?sessionid=782859DA4345CCEF60C4EE7E6F3E1C33&amp;d-1341518-e=2&amp;6578706f7274=1">فايل excell را دريافت کنيد</a>|
+<a href="/student/forgetCard/list.rose?sessionid=782859DA4345CCEF60C4EE7E6F3E1C33&amp;d-1341518-e=5&amp;6578706f7274=1">فايل pdf را دريافت کنيد</a></div>
+            </fieldset>
+        </td>
+    </tr>
+</table>
+</td></tr>
+<div id="resultParent" style="display: none;">
+    <div id="result" dir="rtl" style="background: url(/images/print/print-logo.png) center center no-repeat;-moz-background-size: contain;background-size: contain;">
+    </div>
+</div></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="hspacer"></div>
+            </td>
+            </tr>
+            </table>
+        </div>
+
+
+        <div style="height:20px"></div>
+
+
+    </div>
+    <table cellpadding="0" cellspacing="0" class="footer" align="center" width="100%">
+        <tr height="81" class="footer_middel">
+            <td width="38" height="81" class="footer_tight"></td>
+            <td>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="dab-copyright2">
+                    <a style="padding:0px 0px 2px 2px; margin:0 4px ; line-height:26px; float:right;"
+                       onclick="displayCreatorSiteWindows()"
+                       href="">
+                        <img style="padding:0px 10px 2px 2px; margin:0 4px ; line-height:26px; float:right;"
+                             class="ui-icon-home"
+                             src='/res?creatorLogoId=3987&dl=true' alt='/res?creatorLogoId=dab24.png&dl=true'
+                             height='30'
+                             width='30'/>
+                        داده کاوان اندیشه برتر
+                    </a>
+                    </div>
+
+                
+                <div style="text-align: center">
+                    
+                    
+                    
+                    نسخه
+                    
+                    5.3.2
+                    
+                    |
+                    
+                    <script type="text/javascript">
+                        var date = "20140913";
+                        date = date.substring(0, 4) + "-" + date.substring(4, 6) + "-" + date.substring(6, 8);
+                        document.write(GTJDate(date, "-"));
+                    </script>
+                    |
+                    <script type="text/javascript">
+                        var time = "181912";
+                        time = time.substring(0, 2) + ":" + time.substring(2, 4) + ":" + time.substring(4, 6);
+                        document.write(time);
+                    </script>
+                    
+                    
+                    
+                    
+                </div>
+                <div class="dab-copyright3">
+                    <a style="padding:0px 0px 2px 2px; margin:0 4px ; line-height:26px; float:left;"
+                       onclick="displayOrganSiteWindows()"
+                       href="">
+                        <img style="padding:0px 10px 2px 2px; margin:0 4px ; line-height:26px; float:left;"
+                             class="ui-icon-home"
+                             src='/res?organLogoId=3988&dl=true' alt='/res?organLogoId=logo.jpg&dl=true'
+                             height='30'
+                             width='30'/>
+                        دانشگاه علم و صنعت ایران
+                    </a>
+                </div>
+            </td>
+            <td width="38" height="81" class="footer_left"></td>
+        </tr>
+    </table>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    yourClock();
+</script>
+
+<script type="text/javascript">
+    function setUserMessageIdValue(val) {
+        document.getElementById('userMessageId').value = val;
+    }
+
+    function viewSnippetButtons() {
+        return {
+
+            'بستن': function () {
+                viewSnippetCancelButton();
+            }
+        }
+    }
+
+    function viewSnippetCancelButton() {
+        $('#viewMessageSnippetDialog').dialog('close');
+    }
+
+    function viewHelpButtons() {
+        return {
+
+            'بستن': function () {
+                viewHelpCancelButton();
+            }
+        }
+    }
+
+    function viewHelpCancelButton() {
+        $('#viewHelpDialog').dialog('close');
+    }
+
+    function moreUrl() {
+        window.location = '/messaging/inbox.rose';
+    }
+
+    function displayCreatorSiteWindows() {
+        window.open('http://www.dadekavan.ir' + "", "menubar=1,resizable=1,width=2048,height=750");
+    }
+    function displayOrganSiteWindows() {
+        window.open('http://www.iust.ac.ir' + "", "menubar=1,resizable=1,width=2048,height=750");
+    }
+
+</script>
+</body>
+</html>
