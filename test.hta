@@ -1,10 +1,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<script>
+<head>
 
-var shell = new ActiveXObject("WScript.Shell");
-shell.SendKeys("{F11}");
+<hta:application
+   showintaskbar = "yes"
+   caption = "no"
+   border = "thick"
+   contextmenu = "yes"
+   icon = "path_to_icon.ico"
+   innerborder = "no"
+   scroll = "no"
+   singleinstance = "yes" 
+   resizable = "yes"
+   windowState = "maximize"
+>
+ 
+</head>
+
+<script>
 
 function run()
 {
