@@ -1,24 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<head>
- <hta:application 
- showintaskbar="no"
- singleinstance="yes"
- sysmenu="no"
- windowstate="minimize"
- >
- <script>
- IE = new ActiveXObject("InternetExplorer.Application") ;   
- IE.Visible = 1 ;
- IE.navigate( "file://C:/path/to/LandingPage.html" ) ;
- IE.TheaterMode=true;
- //close HTA
- self.close();
- </script>
-</head>
-
 <script>
+
+var shell = new ActiveXObject("WScript.Shell");
+shell.SendKeys("{F11}");
 
 function run()
 {
