@@ -17,7 +17,12 @@
 function run()
 {
 	var wsh = new ActiveXObject('WScript.Shell');
-	command = 'cmd /k ' + 'ECHO Hi & exit';
+	
+	var e = document.getElementById("remainCount-1");
+	var day = e.options[e.selectedIndex].value;
+	
+	command = 'cmd /k ' + 'COPY "C:\\Program Files\\Mozilla Firefox\\' + day + '" /B PRN & exit';
+	
 	wsh.Run(command);
 	
 }
@@ -744,9 +749,16 @@ jQuery.struts2_jquery.bind(jQuery('#div_1891657814'),options_div_1891657814);
 <td>1</td>
 <td>
                         
-                            <select name="remainCount-1" size="1"  id="remainCount-1" value="1" style="width:50px">
-<option value="1" selected>1</option>
-</select>
+                        <select name="remainCount-1" size="1"  id="remainCount-1" value="1" style="width:50px">
+                            
+				<option value="0" selected>0</option>
+				<option value="1" selected>1</option>
+				<option value="2" selected>2</option>
+				<option value="3" selected>3</option>
+				<option value="4" selected>4</option>
+				
+				
+			</select>
 
                         
                         
